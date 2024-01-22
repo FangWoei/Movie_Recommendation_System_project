@@ -1,21 +1,28 @@
 import streamlit as st
 from PIL import Image
-# from eda import eda
-# from ml import ml
+from table import table
+from chart import chart
+from my_wordcloud import my_wordcloud
 from test import test
 
 
 def main():
     st.title('Movie Recommendation System')
-    menu = ['Home','Test' ]
+    menu = ['Home','Table','chart','WordCloud' ]
     choice = st.sidebar.selectbox('Menu', menu)
     if choice == 'Home':
-        st.image('https://tse3.mm.bing.net/th?id=OIP.U-R58ahr5dtAvtSLGK2wXgHaEK&pid=Api&P=0&h=180')
-        st.text("Hello World")
-
-    # elif choice == 'EDA':
-    #     eda()
-    else:
-        test()
+        st.title('Foo Fang Woei')
+        st.text(18)
+        st.text('Movie Recommendation System')
+        st.text('Why I want do this project')
+        st.info('Creating a personalized movie recommendation system excites me as a movie enthusiast. It promises to deliver films tailored to my preferences, enhancing my entertainment experience.')
+        img = Image.open('minions-shh.gif')
+        st.image(img)
+    elif choice == 'Table':
+        table()
+    elif choice == 'chart':
+        chart()
+    else :
+        my_wordcloud()
 
 main()
